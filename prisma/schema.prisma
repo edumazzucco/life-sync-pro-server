@@ -15,9 +15,9 @@ generator erd {
 }
 
 model Habit {
-  id        String   @id @default(uuid())
-  title     String
-  createdAt DateTime @default(now())
+  id         String   @id @default(uuid())
+  title      String
+  created_at DateTime @default(now())
 
   dayHabits DayHabit[]
   weekDays  HabitWeekDays[]
