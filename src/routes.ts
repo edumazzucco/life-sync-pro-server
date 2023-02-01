@@ -119,4 +119,12 @@ export async function appRoutes(app: FastifyInstance) {
       });
     }
   });
+
+  app.get("/summary", async () => {
+    const summary = await prisma.$queryRaw`
+      SELECT * FROM days
+      `;
+
+    return summary;
+  });
 }
