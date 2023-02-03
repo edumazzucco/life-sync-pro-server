@@ -64,7 +64,11 @@ export async function appRoutes(app: FastifyInstance) {
       },
     });
 
-    const completedHabits = day?.dayHabits.filter((dh) => dh.habit_id);
+    // const completedHabits = day?.dayHabits.filter((dh) => dh.habit_id);
+    const completedHabits =
+      day?.dayHabits.map((dh) => {
+        return dh.habit_id;
+      }) ?? [];
 
     return { filteredHabits, completedHabits };
   });
